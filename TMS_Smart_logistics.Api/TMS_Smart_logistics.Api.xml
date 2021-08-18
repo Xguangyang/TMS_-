@@ -4,6 +4,37 @@
         <name>TMS_Smart_logistics.Api</name>
     </assembly>
     <members>
+        <member name="T:TMS_Smart_logistics.Api.Controllers.ConsignorController">
+            <summary>
+            货主管理
+            </summary>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.ConsignorController.#ctor(TMS_Smart_logistics.IRepository.IConsignor)">
+            <summary>
+            依赖注入
+            </summary>
+            <param name="_consignor"></param>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.ConsignorController.GetConsignor(System.String,System.String,System.String)">
+            <summary>
+            货主管理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.ConsignorController.AddConsignor(TMS_Smart_logistics.Model.ViewConsignor)">
+            <summary>
+            货主管理添加
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.ConsignorController.DelConsignor(System.String)">
+            <summary>
+            货主管理删除
+            </summary>
+            <param name="ConsignorID"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS_Smart_logistics.Api.Controllers.DepartmentController">
             <summary>
             部门
@@ -14,12 +45,7 @@
             
             </summary>
         </member>
-        <member name="F:TMS_Smart_logistics.Api.Controllers.DepartmentController.roleModel">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:TMS_Smart_logistics.Api.Controllers.DepartmentController.#ctor(TMS_Smart_logistics.IRepository.IDepartmentModel,TMS_Smart_logistics.IRepository.IRoleModel)">
+        <member name="M:TMS_Smart_logistics.Api.Controllers.DepartmentController.#ctor(TMS_Smart_logistics.IRepository.IDepartmentModel)">
             <summary>
             依赖注入
             </summary>
@@ -54,20 +80,102 @@
             <param name="DeparMentID"></param>
             <returns></returns>
         </member>
+        <member name="T:TMS_Smart_logistics.Api.Controllers.LIneController">
+            <summary>
+            线路管理
+            </summary>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.LIneController.GetLine(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            线路管理显示
+            </summary>
+            <param name="CircuitName"></param>
+            <param name="CircuitStartPlace"></param>
+            <param name="CircuitEndPlace"></param>
+            <param name="IsOutsource"></param>
+            <param name="EmployeeName"></param>
+            <param name="OutsourcingUnitName"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS_Smart_logistics.Api.Controllers.LoginController">
             <summary>
             登录
             </summary>
         </member>
+        <member name="F:TMS_Smart_logistics.Api.Controllers.LoginController.login">
+            <summary>
+            登录I
+            </summary>
+        </member>
+        <member name="F:TMS_Smart_logistics.Api.Controllers.LoginController.logger">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.LoginController.#ctor(TMS_Smart_logistics.IRepository.ILogin,Microsoft.Extensions.Logging.ILogger{TMS_Smart_logistics.Api.Controllers.LoginController})">
+            <summary>
+            依赖注入
+            </summary>
+            <param name="_login"></param>
+            <param name="_logger"></param>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.LoginController.Login(System.String,System.String)">
+            <summary>
+            登录
+            </summary>
+            <param name="UserName"></param>
+            <param name="UserPasd"></param>
+            <returns></returns>
+        </member>
         <member name="T:TMS_Smart_logistics.Api.Controllers.PositionController">
             <summary>
-            车辆管理
+            职位管理
             </summary>
+        </member>
+        <member name="F:TMS_Smart_logistics.Api.Controllers.PositionController.position">
+            <summary>
+            依赖注入
+            </summary>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.PositionController.#ctor(TMS_Smart_logistics.IRepository.IPositionModel)">
+            <summary>
+            依赖注入
+            </summary>
+            <param name="_position"></param>
+            <param name="_logger"></param>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.PositionController.GetPosition(System.String)">
+            <summary>
+            显示职位
+            </summary>
+            <param name="PositionName"></param>
+            <returns></returns>
         </member>
         <member name="T:TMS_Smart_logistics.Api.Controllers.RegistrationController">
             <summary>
             车辆管理
             </summary>
+        </member>
+        <member name="F:TMS_Smart_logistics.Api.Controllers.RegistrationController.registration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.RegistrationController.#ctor(TMS_Smart_logistics.IRepository.IRegistrationModel)">
+            <summary>
+            
+            </summary>
+            <param name="_registration"></param>
+        </member>
+        <member name="M:TMS_Smart_logistics.Api.Controllers.RegistrationController.GetRegistration(System.String,System.String,System.String,System.String)">
+            <summary>
+            车辆管理显示
+            </summary>
+            <param name="FactoryPlateModel">车厂型号</param>
+            <param name="LicensePlateNumber">车牌号</param>
+            <param name="LicensePlateName">司机姓名</param>
+            <param name="SubordinateCompanies">所属公司</param>
+            <returns></returns>
         </member>
         <member name="T:TMS_Smart_logistics.Api.Controllers.RoleController">
             <summary>

@@ -35,7 +35,7 @@ namespace TMS_Smart_logistics.Api
 
 
 
-            services.AddTransient<ILogin, User_login>();
+            services.AddTransient<ILogin, User_logins>();
             services.AddTransient<IDepartmentModel, DepartmentModel>();
             services.AddTransient<IRoleModel, RoleModel>();
             services.AddControllers();

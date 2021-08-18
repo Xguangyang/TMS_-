@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TMS_Smart_logistics.Model;
 using TMS_Smart_logistics.IRepository;
 
+
 namespace TMS_Smart_logistics.Api.Controllers
 {
     /// <summary>
@@ -19,18 +20,14 @@ namespace TMS_Smart_logistics.Api.Controllers
         /// </summary>
         public IDepartmentModel department;
         /// <summary>
-        /// 
-        /// </summary>
-        public IRoleModel roleModel;
-        /// <summary>
         /// 依赖注入
         /// </summary>
         /// <param name="_department"></param>
         /// <param name="_roleModel"></param>
-        public DepartmentController(IDepartmentModel _department, IRoleModel _roleModel)
+        public DepartmentController(IDepartmentModel _department)
         {
             department = _department;
-            roleModel = _roleModel;
+          
         }
 
         /// <summary>
@@ -41,6 +38,7 @@ namespace TMS_Smart_logistics.Api.Controllers
         [HttpGet]
         public IActionResult Show(string DeparName="")
         {
+           
             return Ok(department.GetDepartment(DeparName));
         }
         /// <summary>
